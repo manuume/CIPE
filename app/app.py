@@ -3,10 +3,11 @@ import pandas as pd
 import joblib
 import numpy as np
 import time
+import os # Import the os module
 
 st.set_page_config(
     page_title="CIPE Uplift Modeling",
-    page_icon="�",
+    page_icon="🎯",
     layout="wide"
 )
 
@@ -93,10 +94,16 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 
+# --- Load Models ---
 @st.cache_resource
 def load_models():
-    model_treat = joblib.load('../models/model_treat.pkl')
-    model_ctrl = joblib.load('../models/model_ctrl.pkl')
+    # FIX: Create a robust path that works locally and on Streamlit Cloud
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    model_treat_path = os.path.join(script_dir, '..', 'models', 'model_treat.pkl')
+    model_ctrl_path = os.path.join(script_dir, '..', 'models', 'model_ctrl.pkl')
+    
+    model_treat = joblib.load(model_treat_path)
+    model_ctrl = joblib.load(model_ctrl_path)
     return model_treat, model_ctrl
 
 model_treat, model_ctrl = load_models()
