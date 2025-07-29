@@ -1,6 +1,6 @@
 # Customer Influence & Persuasion Engine (CIPE)
 
-**Live Demo:** [Link to Deployed Streamlit App]
+**Live Demo:** (https://cipe-demo.streamlit.app/)
 
 ## Project Overview
 
@@ -60,9 +60,6 @@ CIPE_Project/
 |- notebooks/
 |  |- 1_data_analysis_and_modeling.ipynb
 |
-|- src/
-|  |- data_processing.py
-|  |- modeling.py
 |
 |- README.md
 ```
@@ -80,7 +77,7 @@ cd CIPE_Project
 
 ### 2. Download the dataset:
 
-Download the dataset from [this link](your-link-here) and place `CIPE_data.csv` inside the `data/` folder.
+Download the dataset from [this link]((https://drive.google.com/file/d/1MNG6bPPZVqPJqltVnLdF049ASfLndrp0/view?usp=drive_link)) and place `CIPE_data.csv` inside the `data/` folder.
 
 ### 3. Set up a virtual environment (recommended):
 
